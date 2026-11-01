@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Money - Infoprodutos e Serviços Digitais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-card: #1c1c1e;
+            --accent-green: #00ff66;
+            --accent-gold: #ffd700;
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --border-color: #2c2c2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            padding-bottom: 90px;
+        }
+
+        header {
+            background-color: rgba(20, 20, 20, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-green);
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            background: rgba(0, 255, 102, 0.1);
+            color: var(--accent-green);
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+        }
+
+        .hero {
+            padding: 24px 16px;
+            text-align: center;
+            background: linear-gradient(180deg, #141414 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .promo-btn-container {
+            margin-top: 12px;
+        }
+
+        .btn-promo-pulse {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green), #00cc52);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.6); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(0, 255, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #2c2c2e;
+        }
+
+        .product-content {
+            padding: 16px;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .product-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .payment-methods-mini {
+            display: flex;
+            gap: 8px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        .payment-methods-mini i {
+            color: var(--accent-gold);
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .btn-cart {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-buy {
+            background-color: var(--accent-green);
+            color: #000;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .cart-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border-color);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .cart-info {
+            font-size: 0.85rem;
+        }
+
+        .cart-info span {
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .btn-checkout {
+            background-color: var(--accent-gold);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1a1a1c;
+            border-top: 1px solid var(--border-color);
+            padding: 14px 16px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cookie-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .cookie-btn {
+            background-color: var(--accent-green);
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px 16px 80px 16px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+        }
+
+        footer i {
+            color: var(--accent-green);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Start<span>Money</span></div>
+        <div class="security-badge">
+            <i class="fa-solid fa-lock"></i> SSL 256-bit
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Infoprodutos & Soluções Digitais</h1>
+        <p>Acelere seus resultados com ferramentas e conteúdos de alta conversão.</p>
+        <div class="promo-btn-container">
+            <a href="#vitrine" class="btn-promo-pulse">PROMOÇÃO AQUI 👇</a>
+        </div>
+    </section>
+
+    <main class="container" id="vitrine">
+        <div class="section-title">
+            <i class="fa-solid fa-fire" style="color: var(--accent-green);"></i> Produtos em Destaque
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Método Escala Digital" class="product-img">
+            <div class="product-content">
+                <div class="product-title">Método Escala Digital 3.0</div>
+                <div class="product-desc">O passo a passo completo para estruturar suas vendas automáticas na internet com segurança.</div>
+                <div class="product-footer">
+                    <div class="product-price">R$ 97,00</div>
+                </div>
+                <div class="payment-methods-mini">
+                    <span><i class="fa-solid fa-bolt"></i> Pix Instantâneo</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-credit-card"></i> Até 12x</span>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-cart" onclick="adicionarCarrinho('Método Escala Digital 3.0', 97.00)">+ Carrinho</button>
+                    <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy">Comprar Agora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Kit Landing Pages" class="product-img">
+            <div class="product-content">
+                <div class="product-title">Kit Landing Pages Otimizadas</div>
+                <div class="product-desc">Modelos prontos e responsivos focados em conversão máxima para celular.</div>
+                <div class="product-footer">
+                    <div class="product-price">R$ 147,00</div>
+                </div>
+                <div class="payment-methods-mini">
+                    <span><i class="fa-solid fa-bolt"></i> Pix Instantâneo</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-credit-card"></i> Até 12x</span>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-cart" onclick="adicionarCarrinho('Kit Landing Pages Otimizadas', 147.00)">+ Carrinho</button>
+                    <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy">Comprar Agora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="cart-bar" id="cartBar" style="display: none;">
+        <div class="cart-info">
+            Itens: <span id="cartCount">0</span> | Total: <span id="cartTotal">R$ 0,00</span>
+        </div>
+        <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-checkout">Finalizar Compra</a>
+    </div>
+
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-text">
+            Utilizamos cookies para melhorar sua experiência de navegação e desempenho da loja.
+        </div>
+        <button class="cookie-btn" onclick="aceitarCookies()">Aceitar e Fechar</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Start Money. Todos os direitos reservados.</p>
+        <p style="margin-top: 6px;"><i class="fa-solid fa-shield-halved"></i> Ambiente Protegido e Criptografado</p>
+    </footer>
+
+    <script>
+        let totalItens = 0;
+        let valorTotal = 0;
+
+        function adicionarCarrinho(nome, preco) {
+            totalItens++;
+            valorTotal += preco;
+            document.getElementById('cartCount').innerText = totalItens;
+            document.getElementById('cartTotal').innerText = 'R$ ' + valorTotal.toFixed(2).replace('.', ',');
+            document.getElementById('cartBar').style.display = 'flex';
+        }
+
+        function aceitarCookies() {
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
