@@ -1,20 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start Money - Infoprodutos e Serviços Digitais</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-primary: #0a0a0c;
-            --bg-card: #141416;
+            --bg-secondary: #141416;
+            --bg-card: #1c1c1e;
             --accent-green: #00ff66;
-            --accent-gold: #e6b800;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a5;
-            --border-color: #26262b;
+            --accent-gold: #ffd700;
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --border-color: #2c2c2e;
         }
 
         * {
@@ -28,11 +30,11 @@
         body {
             background-color: var(--bg-primary);
             color: var(--text-main);
-            padding-bottom: 80px;
+            padding-bottom: 90px;
         }
 
         header {
-            background-color: rgba(10, 10, 12, 0.9);
+            background-color: rgba(20, 20, 22, 0.85);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
@@ -41,12 +43,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 20px;
+            padding: 12px 16px;
         }
 
         .logo {
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-main);
             letter-spacing: -0.5px;
         }
@@ -62,37 +64,87 @@
             font-size: 0.75rem;
             background: rgba(0, 255, 102, 0.1);
             color: var(--accent-green);
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
             border: 1px solid rgba(0, 255, 102, 0.2);
         }
 
-        .container {
+        .hero {
             padding: 24px 16px;
+            text-align: center;
+            background: linear-gradient(180deg, #141416 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .promo-btn-container {
+            margin-top: 12px;
+        }
+
+        .btn-promo-pulse {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green), #00cc52);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.6); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(0, 255, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
+        }
+
+        .container {
+            padding: 20px 16px;
             max-width: 500px;
             margin: 0 auto;
         }
 
-        /* CARD MODELO INFLUENCIADOR */
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- PRODUTO 1: MODELO INFLUENCIADOR (PACK SENSI) --- */
         .influencer-product-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
-        /* ÁREA DA IMAGEM CENTRALIZADA COM BRILHO NEON */
         .influencer-img-container {
             position: relative;
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: -15px; /* Sobrepõe levemente o topo do card de preço */
+            margin-bottom: -15px;
             z-index: 2;
         }
 
-        /* Efeito de iluminação suave ao fundo da imagem */
         .influencer-img-container::before {
             content: '';
             position: absolute;
@@ -111,7 +163,6 @@
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
         }
 
-        /* CARD DE PREÇO E AÇÃO (EMBAIXO) */
         .price-box-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -161,21 +212,194 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 4px 20px rgba(0, 255, 102, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn-buy-now:active {
             transform: scale(0.98);
         }
 
+        .btn-cart-secondary {
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            font-size: 0.78rem;
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* --- OUTROS PRODUTOS (PADRÃO PADRÃO DA LOJA) --- */
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #2c2c2e;
+            display: block;
+        }
+
+        .product-content {
+            padding: 16px;
+        }
+
+        .product-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .payment-methods-mini {
+            display: flex;
+            gap: 8px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        .payment-methods-mini i {
+            color: var(--accent-gold);
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .btn-cart {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-buy {
+            background-color: var(--accent-green);
+            color: #000;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* --- BARRA DE CARRINHO FLUTUANTE --- */
+        .cart-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(20, 20, 22, 0.95);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border-color);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .cart-info {
+            font-size: 0.85rem;
+        }
+
+        .cart-info span {
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .btn-checkout {
+            background-color: var(--accent-gold);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1a1a1c;
+            border-top: 1px solid var(--border-color);
+            padding: 14px 16px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cookie-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .cookie-btn {
+            background-color: var(--accent-green);
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
         footer {
             text-align: center;
-            padding: 30px 16px;
-            font-size: 0.78rem;
+            padding: 24px 16px 80px 16px;
+            font-size: 0.75rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+        }
+
+        footer i {
+            color: var(--accent-green);
         }
     </style>
 </head>
@@ -184,22 +408,30 @@
     <header>
         <div class="logo">Start<span>Money</span></div>
         <div class="security-badge">
-            <i class="fa-solid fa-shield-halved"></i> Compra Segura
+            <i class="fa-solid fa-lock"></i> SSL 256-bit
         </div>
     </header>
 
-    <main class="container">
+    <section class="hero">
+        <h1>Infoprodutos & Soluções Digitais</h1>
+        <p>Acelere seus resultados com ferramentas e conteúdos de alta conversão.</p>
+        <div class="promo-btn-container">
+            <a href="#vitrine" class="btn-promo-pulse">PROMOÇÃO AQUI 👇</a>
+        </div>
+    </section>
 
-        <!-- PRODUTO 1: PACK SENSI -->
+    <main class="container" id="vitrine">
+        <div class="section-title">
+            <i class="fa-solid fa-fire" style="color: var(--accent-green);"></i> Produtos em Destaque
+        </div>
+
+        <!-- PRODUTO 1: PACK SENSI (MODELO INFLUENCIADOR) -->
         <div class="influencer-product-card">
-            
-            <!-- Imagem do influenciador (Sem texto acima) -->
             <div class="influencer-img-container">
-                <!-- Substitua o link abaixo pela sua imagem transparente recortada -->
-                <img src="URL_DA_SUA_IMAGEM_TRANSPARENTE.png" alt="Pack Sensi" class="influencer-img">
+                <!-- Substitua o link abaixo pela sua imagem transparente -->
+                <img src="URL_DA_SUA_IMAGEM_TRANSPARENTE.png" alt="Pack Sensi Exclusivo" class="influencer-img">
             </div>
 
-            <!-- Card com preço e botão comprar -->
             <div class="price-box-card">
                 <div class="product-title">Pack Sensi Exclusivo</div>
                 <div class="product-subtitle">Otimização de sensibilidade e mira</div>
@@ -208,18 +440,94 @@
                     R$ 67,90
                 </div>
 
-                <a href="LINK_DO_SEU_CHECKOUT_AQUI" class="btn-buy-now">
+                <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy-now">
                     COMPRAR AGORA
                 </a>
-            </div>
 
+                <button class="btn-cart-secondary" onclick="adicionarCarrinho('Pack Sensi Exclusivo', 67.90)">
+                    + Adicionar ao Carrinho
+                </button>
+            </div>
+        </div>
+
+        <!-- PRODUTO 2: PACK OTIMIZAÇÃO (PADRÃO VITRINE) -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Pack Otimização" class="product-img">
+            <div class="product-content">
+                <div class="product-title">Pack Otimização</div>
+                <div class="product-desc">Scripts e ajustes de sistema para zerar o travamento, baixar o ping e otimizar o seu dispositivo móvel.</div>
+                <div class="product-footer">
+                    <div class="product-price">R$ 67,00</div>
+                </div>
+                <div class="payment-methods-mini">
+                    <span><i class="fa-solid fa-bolt"></i> Pix Instantâneo</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-credit-card"></i> Até 12x</span>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-cart" onclick="adicionarCarrinho('Pack Otimização', 67.00)">+ Carrinho</button>
+                    <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy">Comprar Agora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUTO 3: PACK COMBO 🔥 (PADRÃO VITRINE) -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Pack Combo" class="product-img">
+            <div class="product-content">
+                <div class="product-title">Pack Combo 🔥</div>
+                <div class="product-desc">O pacote definitivo contendo Sensi + Otimização completa com desconto especial por tempo limitado.</div>
+                <div class="product-footer">
+                    <div class="product-price">R$ 97,00</div>
+                </div>
+                <div class="payment-methods-mini">
+                    <span><i class="fa-solid fa-bolt"></i> Pix Instantâneo</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-credit-card"></i> Até 12x</span>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-cart" onclick="adicionarCarrinho('Pack Combo 🔥', 97.00)">+ Carrinho</button>
+                    <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy">Comprar Agora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
 
     </main>
 
+    <div class="cart-bar" id="cartBar" style="display: none;">
+        <div class="cart-info">
+            Itens: <span id="cartCount">0</span> | Total: <span id="cartTotal">R$ 0,00</span>
+        </div>
+        <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-checkout">Finalizar Compra</a>
+    </div>
+
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-text">
+            Utilizamos cookies para melhorar sua experiência de navegação e desempenho da loja.
+        </div>
+        <button class="cookie-btn" onclick="aceitarCookies()">Aceitar e Fechar</button>
+    </div>
+
     <footer>
         <p>&copy; 2026 Start Money. Todos os direitos reservados.</p>
+        <p style="margin-top: 6px;"><i class="fa-solid fa-shield-halved"></i> Ambiente Protegido e Criptografado</p>
     </footer>
 
+    <script>
+        let totalItens = 0;
+        let valorTotal = 0;
+
+        function adicionarCarrinho(nome, preco) {
+            totalItens++;
+            valorTotal += preco;
+            document.getElementById('cartCount').innerText = totalItens;
+            document.getElementById('cartTotal').innerText = 'R$ ' + valorTotal.toFixed(2).replace('.', ',');
+            document.getElementById('cartBar').style.display = 'flex';
+        }
+
+        function aceitarCookies() {
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
