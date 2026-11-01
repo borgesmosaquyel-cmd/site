@@ -126,19 +126,21 @@
             gap: 8px;
         }
 
+        /* Estrutura do Card: Imagem em cima, conteúdo e botões embaixo */
         .product-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             overflow: hidden;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .product-img {
             width: 100%;
-            height: 160px;
+            height: 180px;
             object-fit: cover;
             background-color: #2c2c2e;
+            display: block;
         }
 
         .product-content {
@@ -146,7 +148,7 @@
         }
 
         .product-title {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             margin-bottom: 6px;
         }
@@ -166,7 +168,7 @@
         }
 
         .product-price {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--accent-green);
         }
@@ -322,11 +324,59 @@
             <i class="fa-solid fa-fire" style="color: var(--accent-green);"></i> Produtos em Destaque
         </div>
 
+        <!-- PRODUTO 1: Pack Sensi -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Método Escala Digital" class="product-img">
+            <!-- Imagem em cima -->
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Pack Sensi" class="product-img">
             <div class="product-content">
-                <div class="product-title">Método Escala Digital 3.0</div>
-                <div class="product-desc">O passo a passo completo para estruturar suas vendas automáticas na internet com segurança.</div>
+                <div class="product-title">Pack Sensi</div>
+                <div class="product-desc">Configurações avançadas de sensibilidade e mira para máxima precisão e desempenho nos seus jogos.</div>
+                <div class="product-footer">
+                    <div class="product-price">R$ 47,00</div>
+                </div>
+                <div class="payment-methods-mini">
+                    <span><i class="fa-solid fa-bolt"></i> Pix Instantâneo</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-credit-card"></i> Até 12x</span>
+                </div>
+                <!-- Botões embaixo -->
+                <div class="action-buttons">
+                    <button class="btn-cart" onclick="adicionarCarrinho('Pack Sensi', 47.00)">+ Carrinho</button>
+                    <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy">Comprar Agora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUTO 2: Pack Otimização -->
+        <div class="product-card">
+            <!-- Imagem em cima -->
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Pack Otimização" class="product-img">
+            <div class="product-content">
+                <div class="product-title">Pack Otimização</div>
+                <div class="product-desc">Scripts e ajustes de sistema para zerar o travamento, baixar o ping e otimizar o seu dispositivo móvel.</div>
+                <div class="product-footer">
+                    <div class="product-price">R$ 67,00</div>
+                </div>
+                <div class="payment-methods-mini">
+                    <span><i class="fa-solid fa-bolt"></i> Pix Instantâneo</span>
+                    <span>•</span>
+                    <span><i class="fa-solid fa-credit-card"></i> Até 12x</span>
+                </div>
+                <!-- Botões embaixo -->
+                <div class="action-buttons">
+                    <button class="btn-cart" onclick="adicionarCarrinho('Pack Otimização', 67.00)">+ Carrinho</button>
+                    <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy">Comprar Agora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUTO 3: Pack Combo 🔥 -->
+        <div class="product-card">
+            <!-- Imagem em cima -->
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Pack Combo" class="product-img">
+            <div class="product-content">
+                <div class="product-title">Pack Combo 🔥</div>
+                <div class="product-desc">O pacote definitivo contendo Sensi + Otimização completa com desconto especial por tempo limitado.</div>
                 <div class="product-footer">
                     <div class="product-price">R$ 97,00</div>
                 </div>
@@ -335,32 +385,14 @@
                     <span>•</span>
                     <span><i class="fa-solid fa-credit-card"></i> Até 12x</span>
                 </div>
+                <!-- Botões embaixo -->
                 <div class="action-buttons">
-                    <button class="btn-cart" onclick="adicionarCarrinho('Método Escala Digital 3.0', 97.00)">+ Carrinho</button>
+                    <button class="btn-cart" onclick="adicionarCarrinho('Pack Combo 🔥', 97.00)">+ Carrinho</button>
                     <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy">Comprar Agora <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
 
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Kit Landing Pages" class="product-img">
-            <div class="product-content">
-                <div class="product-title">Kit Landing Pages Otimizadas</div>
-                <div class="product-desc">Modelos prontos e responsivos focados em conversão máxima para celular.</div>
-                <div class="product-footer">
-                    <div class="product-price">R$ 147,00</div>
-                </div>
-                <div class="payment-methods-mini">
-                    <span><i class="fa-solid fa-bolt"></i> Pix Instantâneo</span>
-                    <span>•</span>
-                    <span><i class="fa-solid fa-credit-card"></i> Até 12x</span>
-                </div>
-                <div class="action-buttons">
-                    <button class="btn-cart" onclick="adicionarCarrinho('Kit Landing Pages Otimizadas', 147.00)">+ Carrinho</button>
-                    <a href="https://pay.kiwify.com.br/seu-link-aqui" target="_blank" class="btn-buy">Comprar Agora <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
     </main>
 
     <div class="cart-bar" id="cartBar" style="display: none;">
